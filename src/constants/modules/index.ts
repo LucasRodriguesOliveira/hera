@@ -5,6 +5,7 @@ import { CompanyModule } from './Company.module';
 import { ContractModule } from './Contract.module';
 import { HomeModule } from './Home.module';
 import { InstallmentModule } from './Installment.module';
+import { LoginModule } from './Login.module';
 import { LogoutModule } from './Logout.module';
 import { ModuleModule } from './Module.module';
 import { PermissionModule } from './Permission.module';
@@ -30,4 +31,5 @@ export const Modules = new Map<string, IModule>(register([
   ProfileModule,
   PreferencesModule,
   LogoutModule,
+  LoginModule,
 ]));

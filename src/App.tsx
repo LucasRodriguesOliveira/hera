@@ -1,21 +1,16 @@
 import './App.css'
-import { BottomDrawer } from './components/BottomDrawer'
-import { Greeting } from './components/Greeting'
-import { HomeQuickAccess } from './components/HomeQuickAccess'
-import { Navbar } from './components/Navbar'
-import { Sidebar } from './components/Sidebar'
+import { BrowserRouter } from 'react-router-dom'
 import { AppContexts } from './context/AppContexts'
+import { Router } from './router'
 
 function App() {
   return (
     <>
-    <AppContexts>
-      <Navbar />
-      <Sidebar />
-      <Greeting name='Lucas' />
-      <HomeQuickAccess />
-      <BottomDrawer />
-    </AppContexts>
+    <BrowserRouter>
+      <AppContexts>
+        <Router />
+      </AppContexts>
+    </BrowserRouter>
     </>
   )
 }

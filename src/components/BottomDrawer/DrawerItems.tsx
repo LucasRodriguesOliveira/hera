@@ -1,29 +1,23 @@
+import { List } from '@mui/material';
 import { FC } from 'react';
-import { List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import { Items } from './Items';
-import { Modules } from '../../constants';
+import { ModuleNamesEnum } from '../../enum/ModuleNames.enum';
+import { DrawerItem } from './DraweItem';
+import { useAuth } from '../../hooks/UseAuth';
 
 export const DrawerItems: FC = () => {
+  const auth = useAuth();
+
   return (
     <List>
-      {Items.map((item) => {
-        const { icon: Icon, text } = Modules.get(item)!;
-
-        return (
-          <ListItem key={item}>
-            <ListItemButton>
-              <ListItemIcon>
-                <Icon />
-              </ListItemIcon>
-              <ListItemText primary={text}
-                primaryTypographyProps={{
-                  variant: 'h5',
-                }}
-              />
-            </ListItemButton>
-          </ListItem>
-        )
-      })}
+      <DrawerItem module={ModuleNamesEnum.PROFILE}
+        handleClick={() => {}}
+      />
+      <DrawerItem module={ModuleNamesEnum.PREFERENCES}
+        handleClick={() => {}}
+      />
+      <DrawerItem module={ModuleNamesEnum.LOGOUT}
+        handleClick={auth.logout}
+      />
     </List>
   );
 };

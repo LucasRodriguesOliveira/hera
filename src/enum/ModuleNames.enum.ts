@@ -13,4 +13,5 @@ export enum ModuleNamesEnum {
   PROFILE = 'PROFILE',
   PREFERENCES = 'PREFERENCES',
   LOGOUT = 'LOGOUT',
+  LOGIN = 'LOGIN',
 }
